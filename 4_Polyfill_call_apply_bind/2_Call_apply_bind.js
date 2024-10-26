@@ -18,12 +18,12 @@ let ironMan = {
 }
 cap.sayHi("Peter","Bruce");
 
-/********* call : borrow a method ***************/
+/********* method -> call : borrow a method ***************/
 cap.sayHi.call(ironMan,"Black Panther","Antman");
 
-/********* apply : borrow a method and can pass 'n' no of parameters ***************/
+/********* method -> apply : borrow a method and can pass n no of parameters ***************/
 cap.sayHi.apply(ironMan,['Bruce Wayne','Queen']);
 
-/********* bind : used to create copy of a method that has bound this ***************/
+/********* method -> bind : bind a function to a this ***************/
 let copiedMethod = cap.sayHi.bind(ironMan);
 copiedMethod("Peter Parker","Deadpool");
