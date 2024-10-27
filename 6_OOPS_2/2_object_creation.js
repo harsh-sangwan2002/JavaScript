@@ -49,6 +49,25 @@ let str2 = new String("hello");
 let arr = [1,2,3,4];
 console.log(arr);
 // arr -> Array -> Object -> null
-console.log(arr.__proto__.__proto__.__proto__);
+// console.log(arr.__proto__.__proto__.__proto__);
 
-// 2. Using Object.create
+/*********************** 2. Using Object.create 
+ * Object will not inherit the property from it's parent **********************/ 
+let newObj = Object.create(null);
+newObj.prop = "First prop";
+console.log(newObj);
+
+let obj2 = Object.create(newObj);
+obj.name = "cap";
+console.log(obj2);
+
+let obj3 = Object.create(obj2);
+obj3.lastName = "america";
+console.log(obj3.prop);
+
+for(let key in obj3){
+
+    const res = Object.prototype.hasOwnProperty.call(obj3,key);
+    if(res)
+        console.log(key,obj[key]);
+}
