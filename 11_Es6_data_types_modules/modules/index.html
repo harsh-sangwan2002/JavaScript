@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Modules</h1>
+
+    <!-- 1. When we have mutiple script file then all of them work as a big single script file.
+         2. Order is also important -> to maintain order network
+         3. There is scope pollution
+         4. There is no abstraction as well -->
+
+    <!-- <script src="lib.js"></script>
+    <script src="client.js"></script> -->
+    
+    <!-- Modules 
+        1. There is no concpet of order -> export and import + network??
+        2. There is no scope pollution
+        3. You can implement abstraction
+        4. It is in strict mode
+        5. Modules are cached -->
+    <script src="lib.js" type="module"></script>
+    <script src="client.js" type="module"></script>
+
+</body>
+
+</html>
