@@ -13,10 +13,44 @@
         }
     </style>
 
-    <!-- <script src="1_async_sync.js"></script> -->
-    <script src="2_event_loop.js"></script>
+    
 </head>
 <body>
-    <h1>ES6 Data Types & Modules</h1>
+    <h1>Queues Example</h1>
+    <!-- 1. Synchronous code -->
+    <!-- 2. Asynchronous code -->
+            <!-- a. cb based async functions/ event listeners -->
+            <!-- b. promise based cbs -->
+            <!-- c. requestAnimation Frame -> It executes JS code just before evry render -->
+
+    <!-- Priority List -> 
+     sync code > microTaskQueue > cbQueue > requestAnimationFrame cbQueue -->
+     
+    <script>
+
+        console.log("A sync task");
+
+        // queue -> callBack queue / task queue
+        setTimeout(()=>{
+            console.log("B async task");
+        },1000)
+
+        // queue -> microTask queue. It has a higher priority than the task/callBack queue.
+        Promise.resolve().then(()=>{
+            console.log("C async task");
+        })
+
+        queueMicrotask(function(){
+            console.log("I am in microTask queue");
+        });
+
+        requestAnimationFrame(function(){
+            console.log("requestAnimationFrame queue");
+        })
+
+        // Synchronous code
+        console.log("D sync task");
+
+    </script>
 </body>
 </html>
