@@ -72,3 +72,5 @@ for(let key in cap){
  * Excel -> Represent data in form of rows and columns
  * XML -> Represent data in form of html tags
  * ***********************/ 
+
+/************  Map, Set, Weakmap, Weakset *******/
